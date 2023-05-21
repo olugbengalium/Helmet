@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
+    // MARK: - Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            VStack(spacing: 0) {
+                NavigationBarView()
+                    .padding(.horizontal)
+//                    .padding(.bottom)
+//                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                Spacer()
+                FooterView()
+            }
         }
-        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewLayout(.sizeThatFits)
     }
 }
